@@ -1,0 +1,62 @@
+/* HEADER BASE */
+.header {
+    background-color: transparent;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between; /* Separa Logo, Menú y Botón */
+    align-items: center;
+}
+
+.logo img { max-height: 45px; width: auto; transition: 0.3s; }
+
+/* NAVEGACIÓN CENTRAL */
+.nav-links { display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { 
+    color: var(--white); 
+    font-weight: 600; 
+    font-size: 0.75rem; 
+    text-transform: uppercase;
+    text-decoration: none; 
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition); 
+}
+/* Línea roja debajo del elemento activo o al pasar el mouse */
+.nav-links a:hover, .nav-links a.active { border-bottom-color: var(--mhc-red); }
+
+/* BOTÓN HEADER DERECHO (Transparente con borde) */
+.btn-header-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--white);
+    padding: 10px 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+.btn-header-outline:hover { background: var(--white); color: var(--text-main); }
+
+/* ESTADO SCROLL (Fondo blanco) */
+.header.scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    padding: 12px 0;
+}
+.header.scrolled .nav-links a { color: var(--text-main); }
+.header.scrolled .btn-header-outline { border-color: var(--text-main); color: var(--text-main); }
+.header.scrolled .btn-header-outline:hover { background: var(--text-main); color: var(--white); }

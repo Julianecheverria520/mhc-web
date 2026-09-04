@@ -1,0 +1,275 @@
+/* =========================================
+   04 - SECCIONES: CIFRAS, MAPA Y PREMIOS
+   ========================================= */
+
+/* --- SECCIÓN CIFRAS --- */
+.cifras-section {
+    background-color: var(--white);
+    padding: 60px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    position: relative;
+    z-index: 10;
+}
+.cifras-grid { display: flex; justify-content: space-between; align-items: center; }
+.cifra-item { flex: 1; text-align: center; border-right: 1px solid #e5e5e5; padding: 10px 0; }
+.cifra-item:last-child { border-right: none; }
+.cifra-icon { font-size: 2.2rem; color: var(--mhc-red); margin-bottom: 15px; }
+.cifra-valor { font-size: 3.2rem; color: var(--text-main); margin-bottom: 5px; font-weight: 700; letter-spacing: -1px; }
+.cifra-label { font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+/* --- SECCIÓN MAPA (DISEÑO 3 COLUMNAS) --- */
+.mapa-section { 
+    padding: 100px 0; 
+    background-color: #f8f9fa; /* Fondo gris muy claro */
+    border-top: 1px solid #eaeaea;
+}
+
+.presencia-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Columna Izquierda: Texto */
+.presencia-texto {
+    flex: 1;
+    max-width: 320px;
+}
+
+.presencia-texto h2 {
+    font-size: 2.6rem;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.presencia-texto p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Columna Centro: Mapa */
+.presencia-mapa {
+    flex: 1.5;
+    position: relative;
+    padding: 0 20px;
+}
+
+#mapa-colombia { 
+    width: 100%; 
+    height: 450px; 
+    background: transparent;
+    z-index: 1; 
+    border-radius: 8px;
+    /* Efecto visual para hacer el mapa más corporativo y gris */
+    filter: grayscale(100%) contrast(1.1) opacity(0.8);
+    transition: filter 0.3s ease;
+}
+
+#mapa-colombia:hover {
+    filter: grayscale(50%) contrast(1.1) opacity(1);
+}
+
+/* Columna Derecha: Barras de Progreso */
+.presencia-estadisticas {
+    flex: 1;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.stat-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.stat-number {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.stat-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #dcdcdc;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    background-color: var(--mhc-red); /* Barra roja institucional */
+    border-radius: 2px;
+    transition: width 1s ease-in-out;
+}
+
+/* Responsivo para Tablets y Móviles */
+@media (max-width: 1024px) {
+    .presencia-layout { flex-direction: column; text-align: center; }
+    .presencia-texto, .presencia-estadisticas { max-width: 100%; width: 100%; }
+    .presencia-texto { margin-bottom: 30px; }
+    .presencia-mapa { width: 100%; margin-bottom: 30px; }
+}
+
+/* --- SECCIÓN PREMIOS (TIMELINE HORIZONTAL OSCURO) --- */
+.premios-timeline-section {
+    background-color: #0d1117; /* Fondo oscuro premium */
+    padding: 80px 0;
+    color: var(--white);
+}
+
+.timeline-layout {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Título a la izquierda */
+.timeline-header {
+    flex: 0 0 280px;
+}
+
+.seccion-etiqueta-red {
+    color: var(--mhc-red);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Línea roja decorativa debajo de "Reconocimientos" */
+.seccion-etiqueta-red::after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 2px;
+    background-color: var(--mhc-red);
+    margin-top: 8px;
+}
+
+.timeline-header h2 {
+    font-size: 2.2rem;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+/* Contenedor de los premios */
+.timeline-content {
+    flex: 1;
+    position: relative;
+    padding-bottom: 35px; /* Espacio para la línea inferior */
+}
+
+/* La línea horizontal base de color gris oscuro */
+.timeline-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #2a2a2a;
+    z-index: 1;
+}
+
+.timeline-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 18px;
+    flex: 1;
+    position: relative;
+}
+
+/* El punto rojo anclado a la línea base */
+.timeline-dot {
+    position: absolute;
+    bottom: -41px; /* Baja el punto hasta la línea base */
+    left: 45px; /* Lo centra debajo de la foto */
+    width: 14px;
+    height: 14px;
+    background-color: var(--mhc-red);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+    border: 1px solid #333;
+}
+
+.timeline-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-year {
+    color: var(--mhc-red);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.timeline-text h3 {
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.timeline-text p {
+    color: #a0a0a0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Adaptación para pantallas pequeñas (cambia de horizontal a vertical) */
+@media (max-width: 1024px) {
+    .timeline-layout { flex-direction: column; align-items: flex-start; }
+    .timeline-header { flex: auto; margin-bottom: 30px; }
+    .timeline-items { flex-direction: column; gap: 40px; }
+    .timeline-line { width: 2px; height: 100%; top: 0; left: 0; bottom: auto; }
+    .timeline-content { padding-bottom: 0; }
+    .timeline-item { padding-bottom: 0; padding-left: 30px; }
+    .timeline-dot { left: -6px; bottom: auto; top: 15px; }
+}
+
+/* RESPONSIVO */
+@media (max-width: 992px) {
+    .premios-grid { grid-template-columns: repeat(2, 1fr); }
+    .cifras-grid { flex-wrap: wrap; }
+    .cifra-item { flex: 0 0 50%; border-bottom: 1px solid #e5e5e5; padding: 30px 0; }
+    .cifra-item:nth-child(even) { border-right: none; }
+    .cifra-item:nth-child(3), .cifra-item:nth-child(4) { border-bottom: none; }
+}
+
+@media (max-width: 768px) {
+    .premios-grid { grid-template-columns: 1fr; }
+}

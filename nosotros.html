@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos - MHC Ingeniería y Construcción</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/01-global.css">
+    <link rel="stylesheet" href="css/02-header.css">
+    <link rel="stylesheet" href="css/07-empresa.css"> <!-- Nuevo CSS para esta página -->
+</head>
+<body>
+
+    <!-- ENCABEZADO (Idéntico al index) -->
+    <header class="header scrolled">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="assets/img/logo-mhc.png" alt="MHC Logo"></a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="nosotros.html" class="active">NOSOTROS</a></li>
+                    <li><a href="index.html#proyectos">PROYECTOS</a></li>
+                    <li><a href="index.html#presencia">PRESENCIA</a></li>
+                    <li><a href="index.html#contacto">PQR / CONTACTO</a></li>
+                </ul>
+            </nav>
+            <a href="index.html#contacto" class="btn-header-outline"><i class='bx bx-message-rounded-dots'></i> PQR / CONTACTO</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- CABECERA DE LA PÁGINA (Hero corto) -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Nuestra Empresa</h1>
+                <p>Conoce los principios, valores y políticas que rigen nuestro compromiso con el desarrollo de Colombia.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE POLÍTICAS CORPORATIVAS (Acordeones) -->
+        <section class="politicas-section">
+            <div class="container">
+                <div class="politicas-header">
+                    <h2>Políticas Corporativas</h2>
+                    <p>En MHC operamos bajo un estricto marco de integridad, respeto y calidad. Seleccione una política para leerla a continuación:</p>
+                </div>
+
+                <div class="acordeon-contenedor">
+                    <!-- Política 1 -->
+                    <details class="acordeon-item">
+                        <summary>Política Integral <i class='bx bx-chevron-down'></i></summary>
+                        <div class="acordeon-contenido">
+                            <p>Aquí va el texto completo de la Política Integral de MHC. Describe el compromiso con la calidad, la seguridad en el trabajo y el medio ambiente durante la ejecución de obras civiles...</p>
+                        </div>
+                    </details>
+
+                    <!-- Política 2 -->
+                    <details class="acordeon-item">
+                        <summary>Política de prevención de acoso sexual y laboral <i class='bx bx-chevron-down'></i></summary>
+                        <div class="acordeon-contenido">
+                            <p>En MHC promovemos un ambiente de trabajo sano, seguro y libre de cualquier tipo de acoso o discriminación. (Aquí pegas el texto público de esta política)...</p>
+                        </div>
+                    </details>
+
+                    <!-- Política 3 -->
+                    <details class="acordeon-item">
+                        <summary>Política de Inclusión <i class='bx bx-chevron-down'></i></summary>
+                        <div class="acordeon-contenido">
+                            <p>Garantizamos igualdad de oportunidades para todos nuestros colaboradores, fomentando la diversidad en nuestros proyectos a nivel nacional...</p>
+                        </div>
+                    </details>
+
+                    <!-- Política 4 -->
+                    <details class="acordeon-item">
+                        <summary>Política de Derechos Humanos <i class='bx bx-chevron-down'></i></summary>
+                        <div class="acordeon-contenido">
+                            <p>MHC se compromete a respetar, proteger y promover los Derechos Humanos en todas nuestras zonas de influencia y cadenas de suministro...</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER CORPORATIVO -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="assets/img/logo-mhc.png" alt="MHC Logo" style="max-height: 40px; background: var(--white); padding: 5px; border-radius: 4px;">
+                <p>&copy; 2026 MHC Ingeniería y Construcción. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MHC Ingeniería y Construcción de Obras Civiles. Transformamos el territorio colombiano con obras de ingeniería monumental.">
+    <title>MHC Ingeniería y Construcción de Obras Civiles</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="css/01-global.css">
+    <link rel="stylesheet" href="css/02-header.css">
+    <link rel="stylesheet" href="css/03-hero.css">
+    <link rel="stylesheet" href="css/04-secciones.css">
+    <link rel="stylesheet" href="css/05-proyectos.css">
+    <link rel="stylesheet" href="css/06-contacto.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Inicio MHC">
+                <img src="assets/img/logo-mhc.png" alt="Logo MHC Ingeniería y Construcción">
+            </a>
+            
+            <nav class="navbar" aria-label="Navegación principal">
+                <ul class="nav-links">
+                    <li><a href="#inicio" class="active">INICIO</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
+                    <li><a href="#proyectos">PROYECTOS</a></li>
+                    <li><a href="#presencia">PRESENCIA</a></li>
+                    <li><a href="#premios">RECONOCIMIENTOS</a></li>
+                    <li><a href="#capacidades">CAPACIDADES</a></li>
+                </ul>
+            </nav>
+
+            <a href="#contacto" class="btn-header-outline"><i class='bx bx-message-rounded-dots'></i> PQR / CONTACTO</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero-image-section">
+            
+            <div class="hero-slider">
+                <div class="slide-bg active" style="background-image: url('assets/img/hero1.jpg');"></div>
+                <div class="slide-bg" style="background-image: url('assets/img/hero2.jpg');"></div>
+                <div class="slide-bg" style="background-image: url('assets/img/hero3.jpg');"></div>
+            </div>
+
+            <div class="hero-overlay"></div>
+            
+            <div class="container hero-content-box">
+                <h1 class="reveal">MHC<br>CONSTRUYE</h1>
+                <div class="hero-separator reveal"></div>
+                <p class="reveal">Transformamos el territorio colombiano con ingeniería, calidad y compromiso.</p>
+                
+                <div class="hero-buttons reveal">
+                    <a href="#proyectos" class="btn-primary">VER PROYECTOS <i class='bx bx-right-arrow-alt'></i></a>
+                    <a href="nosotros.html" class="btn-outline">NUESTRA EMPRESA</a>
+                </div>
+            </div>
+            
+            <div class="hero-indicators">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+
+        <section id="cifras" class="cifras-section reveal">
+            <div class="container cifras-grid">
+                <div class="cifra-item">
+                    <i class='bx bx-calendar cifra-icon'></i>
+                    <h3 class="cifra-valor">+50</h3>
+                    <p class="cifra-label">AÑOS DE EXPERIENCIA</p>
+                </div>
+                <div class="cifra-item">
+                    <i class='bx bx-building cifra-icon'></i>
+                    <h3 class="cifra-valor">+100</h3>
+                    <p class="cifra-label">PROYECTOS EJECUTADOS</p>
+                </div>
+                <div class="cifra-item">
+                    <i class='bx bx-trip cifra-icon'></i> 
+                    <h3 class="cifra-valor">+2.300</h3>
+                    <p class="cifra-label">KM DE VÍAS CONSTRUIDOS</p>
+                </div>
+                <div class="cifra-item">
+                    <i class='bx bx-map cifra-icon'></i>
+                    <h3 class="cifra-valor">12</h3>
+                    <p class="cifra-label">DEPARTAMENTOS</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="portfolio-section reveal">
+            <div class="container portfolio-layout">
+                
+                <div class="portfolio-text">
+                    <span class="seccion-etiqueta">PROYECTOS DESTACADOS</span>
+                    <h2>Infraestructura que conecta y transforma</h2>
+                    <p>Ejecutamos proyectos de gran escala con altos estándares técnicos, de seguridad y sostenibilidad.</p>
+                    <a href="#" class="btn-outline-dark">VER TODOS LOS PROYECTOS <i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+
+                <div class="portfolio-carousel" id="portfolio-contenedor">
+                </div>
+
+            </div>
+        </section>
+
+        <section id="presencia" class="mapa-section reveal">
+            <div class="container presencia-layout">
+                
+                <div class="presencia-texto">
+                    <span class="seccion-etiqueta">PRESENCIA NACIONAL</span>
+                    <h2>Construimos en todo el territorio colombiano</h2>
+                    <p>Nuestra operación y experiencia nos permiten desarrollar proyectos en las regiones más retadoras del país.</p>
+                    <a href="#mapa-colombia" class="btn-outline-dark"><i class='bx bx-map'></i> VER MAPA INTERACTIVO</a>
+                </div>
+
+                <div class="presencia-mapa">
+                    <div id="mapa-colombia" aria-label="Mapa interactivo de proyectos en Colombia"></div>
+                </div>
+
+                <div class="presencia-estadisticas">
+                    <div class="stat-row">
+                        <div class="stat-info">
+                            <span class="stat-name">Región Andina</span>
+                            <span class="stat-number">128 proyectos</span>
+                        </div>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-info">
+                            <span class="stat-name">Región Caribe</span>
+                            <span class="stat-number">102 proyectos</span>
+                        </div>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 65%;"></div></div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-info">
+                            <span class="stat-name">Región Pacífico</span>
+                            <span class="stat-number">86 proyectos</span>
+                        </div>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 50%;"></div></div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-info">
+                            <span class="stat-name">Región Orinoquía</span>
+                            <span class="stat-number">52 proyectos</span>
+                        </div>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 30%;"></div></div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-info">
+                            <span class="stat-name">Región Amazonía</span>
+                            <span class="stat-number">24 proyectos</span>
+                        </div>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 15%;"></div></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN PREMIOS (TIMELINE OSCURO) -->
+        <section id="premios" class="premios-timeline-section reveal">
+            <div class="container timeline-layout">
+                
+                <!-- Columna Izquierda: Título -->
+                <div class="timeline-header">
+                    <span class="seccion-etiqueta-red">RECONOCIMIENTOS</span>
+                    <h2>Trayectoria que nos enorgullece</h2>
+                </div>
+
+                <!-- Columna Derecha: Línea de tiempo -->
+                <div class="timeline-content">
+                    <!-- La línea continua inferior -->
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-items">
+                        <!-- Galardón 1994 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <img src="assets/img/premios/premio-1994.jpg" alt="Presa de Sesquilé" loading="lazy">
+                            <div class="timeline-text">
+                                <span class="timeline-year">1994</span>
+                                <h3>Premio Nacional</h3>
+                                <p>Construcción Berma Aguas Arriba Presa de Sesquilé. 1° lugar en el Premio Internacional Puente de Alcántara.</p>
+                            </div>
+                        </div>
+
+                        <!-- Galardón 2012 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <img src="assets/img/premios/premio-2012.jpg" alt="Túnel Falso el Cune" loading="lazy">
+                            <div class="timeline-text">
+                                <span class="timeline-year">2012</span>
+                                <h3>Premio Nacional</h3>
+                                <p>Mejor gestión y excelencia técnica en la construcción de proyectos de infraestructura vial (Túnel Falso el Cune).</p>
+                            </div>
+                        </div>
+
+                        <!-- Galardón 2019 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <img src="assets/img/premios/premio-2019.jpg" alt="Viaducto El Gran Manglar" loading="lazy">
+                            <div class="timeline-text">
+                                <span class="timeline-year">2019</span>
+                                <h3>Doble Galardón Nacional</h3>
+                                <p>Excelencia en calidad, diseño e impacto ambiental por el Viaducto El Gran Manglar sobre la Ciénaga de la Virgen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="capacidades" class="capacidades-section reveal">
+            <div class="container">
+                <div class="capacidades-header" style="text-align: center; margin-bottom: 50px;">
+                    <h2>Ingeniería que transforma territorio</h2>
+                    <p style="color: var(--text-muted); margin-top: 15px;">Dominio técnico y ejecución precisa en cuatro ejes estructurales.</p>
+                </div>
+                
+                <div class="capacidades-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;">
+                    <div class="capacidad-box">
+                        <i class='bx bx-git-merge' style="font-size: 3rem; color: var(--mhc-red); margin-bottom: 15px;" aria-hidden="true"></i>
+                        <h4>Infraestructura Vial</h4>
+                    </div>
+                    <div class="capacidad-box">
+                        <i class='bx bx-landscape' style="font-size: 3rem; color: var(--mhc-red); margin-bottom: 15px;" aria-hidden="true"></i>
+                        <h4>Movimiento de Tierras</h4>
+                    </div>
+                    <div class="capacidad-box">
+                        <i class='bx bx-building' style="font-size: 3rem; color: var(--mhc-red); margin-bottom: 15px;" aria-hidden="true"></i>
+                        <h4>Puentes y Estructuras</h4>
+                    </div>
+                    <div class="capacidad-box">
+                        <i class='bx bx-cog' style="font-size: 3rem; color: var(--mhc-red); margin-bottom: 15px;" aria-hidden="true"></i>
+                        <h4>Operación de Maquinaria</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="pqr-section">
+            <div class="container pqr-grid reveal">
+                <div class="pqr-info">
+                    <h2>Estamos para escucharte</h2>
+                    <p>Tu opinión es fundamental para nuestra mejora continua. Utilice este canal oficial para radicar sus Peticiones, Quejas, Reclamos o Sugerencias.</p>
+                    <ul class="contact-list">
+                        <li><i class='bx bx-map' aria-hidden="true"></i> Bogotá D.C., Colombia</li>
+                        <li><i class='bx bx-phone' aria-hidden="true"></i> +57 (601) 000 0000</li>
+                        <li><i class='bx bx-envelope' aria-hidden="true"></i> contacto@mhc.com.co</li>
+                    </ul>
+                </div>
+                
+                <div class="pqr-form-container">
+                    <form id="formPQR" class="formulario" action="#" method="POST">
+                        <div class="input-group">
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo / Razón Social" required aria-required="true">
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="correo" name="correo" placeholder="Correo Electrónico" required aria-required="true">
+                        </div>
+                        <div class="input-group">
+                            <select id="tipo-solicitud" name="tipo-solicitud" required aria-required="true">
+                                <option value="" disabled selected>Tipo de Solicitud...</option>
+                                <option value="peticion">Petición</option>
+                                <option value="queja">Queja</option>
+                                <option value="reclamo">Reclamo</option>
+                                <option value="sugerencia">Sugerencia</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte..." required aria-required="true"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; display: flex; justify-content: center; gap: 10px;">RADICAR SOLICITUD <i class='bx bx-send'></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="assets/img/logo-mhc.png" alt="MHC Logo" style="max-height: 40px; background: var(--white); padding: 5px; border-radius: 4px;" loading="lazy">
+                <p>&copy; 2026 MHC Ingeniería y Construcción. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-social">
+                <span style="font-size: 0.85rem; margin-right: 15px;">Síguenos</span>
+                <a href="#" aria-label="Perfil de LinkedIn"><i class='bx bxl-linkedin-square' aria-hidden="true"></i></a>
+                <a href="#" aria-label="Perfil de Instagram"><i class='bx bxl-instagram-alt' aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/mapa.js"></script>
+    <script src="js/header.js"></script>
+    
+    <script src="js/datos-proyectos.js"></script>
+    <script src="js/portafolio.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/hero-slider.js"></script>    
+    <script src="js/animaciones.js"></script>
+</body>
+</html>

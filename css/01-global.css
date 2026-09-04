@@ -1,0 +1,31 @@
+:root {
+    --mhc-red: #cc0000;
+    --mhc-dark-red: #990000;
+    --text-main: #2b2b2b;
+    --text-muted: #6b6b6b;
+    --bg-light: #f8f9fa;
+    --bg-dark: #121212;
+    --white: #ffffff;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 15px 35px rgba(204, 0, 0, 0.15);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+body { color: var(--text-main); background-color: var(--white); }
+h1, h2, h3 { font-weight: 700; color: var(--text-main); }
+p { line-height: 1.6; color: var(--text-muted); }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+
+/* Botones Generales */
+.btn-primary, .btn-contacto {
+    background-color: var(--mhc-red); color: var(--white) !important; padding: 12px 28px;
+    border-radius: 8px; font-weight: 600; border: none; cursor: pointer; text-decoration: none;
+    display: inline-block; transition: var(--transition); box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+}
+.btn-primary:hover, .btn-contacto:hover { background-color: var(--mhc-dark-red); transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+
+/* Animaciones globales */
+.reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
