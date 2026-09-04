@@ -17,26 +17,27 @@
     <!-- CSS del Mapa Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     
-    <!-- CSS Modularizado de MHC (Rutas corregidas con '/') -->
-    <link rel="stylesheet" href="/css/01-global.css">
-    <link rel="stylesheet" href="/css/02-header.css">
-    <link rel="stylesheet" href="/css/03-hero.css">
-    <link rel="stylesheet" href="/css/04-secciones.css">
-    <link rel="stylesheet" href="/css/05-proyectos.css">
-    <link rel="stylesheet" href="/css/06-contacto.css">
+    <!-- CSS Modularizado de MHC (Rutas relativas) -->
+    <link rel="stylesheet" href="css/01-global.css">
+    <link rel="stylesheet" href="css/02-header.css">
+    <link rel="stylesheet" href="css/03-hero.css">
+    <link rel="stylesheet" href="css/04-secciones.css">
+    <link rel="stylesheet" href="css/05-proyectos.css">
+    <link rel="stylesheet" href="css/06-contacto.css">
 </head>
 <body>
 
     <!-- ENCABEZADO Y NAVEGACIÓN -->
     <header class="header">
         <div class="container">
-            <a href="/index.html" class="logo" aria-label="Inicio MHC">
-                <img src="/assets/img/logo-mhc.png" alt="Logo MHC Ingeniería y Construcción">
+            <a href="index.html" class="logo" aria-label="Inicio MHC">
+                <img src="assets/img/logo-mhc.png" alt="Logo MHC Ingeniería y Construcción">
             </a>
             
             <nav class="navbar" aria-label="Navegación principal">
                 <ul class="nav-links">
                     <li><a href="#inicio" class="active">INICIO</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
                     <li><a href="#proyectos">PROYECTOS</a></li>
                     <li><a href="#presencia">PRESENCIA</a></li>
                     <li><a href="#premios">RECONOCIMIENTOS</a></li>
@@ -49,26 +50,28 @@
     </header>
 
     <main>
-        <!-- 1. SECCIÓN HERO (El slider se maneja desde JS) -->
+        <!-- 1. SECCIÓN HERO (Slider dinámico) -->
         <section id="inicio" class="hero-image-section">
             
-            <!-- Contenedor del Slider (Rutas corregidas con '/') -->
             <div class="hero-slider">
-                <div class="slide-bg active" style="background-image: url('/assets/img/hero1.jpg');"></div>
-                <div class="slide-bg" style="background-image: url('/assets/img/hero2.jpg');"></div>
-                <div class="slide-bg" style="background-image: url('/assets/img/hero3.jpg');"></div>
+                <div class="slide-bg active" style="background-image: url('assets/img/hero1.jpg');"></div>
+                <div class="slide-bg" style="background-image: url('assets/img/hero2.jpg');"></div>
+                <div class="slide-bg" style="background-image: url('assets/img/hero3.jpg');"></div>
             </div>
 
             <div class="hero-overlay"></div>
             
-            <div class="container hero-content-box">
-                <h1 class="reveal">MHC<br>CONSTRUYE</h1>
-                <div class="hero-separator reveal"></div>
-                <p class="reveal">Transformamos el territorio colombiano con ingeniería, calidad y compromiso.</p>
-                
-                <div class="hero-buttons reveal">
-                    <a href="#proyectos" class="btn-primary">VER PROYECTOS <i class='bx bx-right-arrow-alt'></i></a>
-                    <a href="#capacidades" class="btn-outline">CONOCE MÁS</a>
+            <!-- CONTENEDOR SEPARADO: Alineará perfectamente con el logo y menú -->
+            <div class="container">
+                <div class="hero-content-box">
+                    <h1 class="reveal">MARIO HUERTAS<br>COTES<br>MHC CONSTRUYE</h1>
+                    <div class="hero-separator reveal"></div>
+                    <p class="reveal">Transformamos el territorio colombiano con ingeniería, calidad y compromiso.</p>
+                    
+                    <div class="hero-buttons reveal">
+                        <a href="#proyectos" class="btn-primary">VER PROYECTOS <i class='bx bx-right-arrow-alt'></i></a>
+                        <a href="nosotros.html" class="btn-outline">CONOCE MÁS</a>
+                    </div>
                 </div>
             </div>
             
@@ -84,7 +87,7 @@
             <div class="container cifras-grid">
                 <div class="cifra-item">
                     <i class='bx bx-calendar cifra-icon'></i>
-                    <h3 class="cifra-valor">+20</h3>
+                    <h3 class="cifra-valor">+50</h3>
                     <p class="cifra-label">AÑOS DE EXPERIENCIA</p>
                 </div>
                 <div class="cifra-item">
@@ -117,7 +120,7 @@
                 </div>
 
                 <div class="portfolio-carousel" id="portfolio-contenedor">
-                    <!-- Las tarjetas se inyectarán aquí desde el JS -->
+                    <!-- Las tarjetas se inyectarán aquí dinámicamente desde JS -->
                 </div>
 
             </div>
@@ -177,10 +180,10 @@
                     <div class="timeline-line"></div>
                     
                     <div class="timeline-items">
-                        <!-- Galardón 1994 (Ruta corregida con '/') -->
+                        <!-- Galardón 1994 -->
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <img src="/assets/img/premios/premio-1994.jpg" alt="Presa de Sesquilé" loading="lazy">
+                            <img src="assets/img/premios/premio-1994.jpg" alt="Presa de Sesquilé" loading="lazy">
                             <div class="timeline-text">
                                 <span class="timeline-year">1994</span>
                                 <h3>Premio Nacional</h3>
@@ -188,10 +191,10 @@
                             </div>
                         </div>
 
-                        <!-- Galardón 2012 (Ruta corregida con '/') -->
+                        <!-- Galardón 2012 -->
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <img src="/assets/img/premios/premio-2012.jpg" alt="Túnel Falso el Cune" loading="lazy">
+                            <img src="assets/img/premios/premio-2012.jpg" alt="Túnel Falso el Cune" loading="lazy">
                             <div class="timeline-text">
                                 <span class="timeline-year">2012</span>
                                 <h3>Premio Nacional</h3>
@@ -199,10 +202,10 @@
                             </div>
                         </div>
 
-                        <!-- Galardón 2019 (Ruta corregida con '/') -->
+                        <!-- Galardón 2019 -->
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            <img src="/assets/img/premios/premio-2019.jpg" alt="Viaducto El Gran Manglar" loading="lazy">
+                            <img src="assets/img/premios/premio-2019.jpg" alt="Viaducto El Gran Manglar" loading="lazy">
                             <div class="timeline-text">
                                 <span class="timeline-year">2019</span>
                                 <h3>Doble Galardón Nacional</h3>
@@ -288,8 +291,7 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-logo">
-                <!-- Ruta corregida con '/' -->
-                <img src="/assets/img/logo-mhc.png" alt="MHC Logo" style="max-height: 40px; background: var(--white); padding: 5px; border-radius: 4px;" loading="lazy">
+                <img src="assets/img/logo-mhc.png" alt="MHC Logo" style="max-height: 40px; background: var(--white); padding: 5px; border-radius: 4px;" loading="lazy">
                 <p>&copy; 2026 MHC Ingeniería y Construcción. Todos los derechos reservados.</p>
             </div>
             <div class="footer-social">
@@ -300,15 +302,16 @@
         </div>
     </footer>
 
-    <!-- JS Scripts (Rutas corregidas con '/') -->
+    <!-- JS Scripts (Rutas relativas) -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="/js/mapa.js"></script>
-    <script src="/js/header.js"></script>
+    <script src="js/mapa.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/hero-slider.js"></script>
     
     <!-- Scripts del Portafolio Dinámico -->
-    <script src="/js/datos-proyectos.js"></script>
-    <script src="/js/portafolio.js"></script>
+    <script src="js/datos-proyectos.js"></script>
+    <script src="js/portafolio.js"></script>
     
-    <script src="/js/animaciones.js"></script>
+    <script src="js/animaciones.js"></script>
 </body>
 </html>

@@ -1,7 +1,10 @@
+/* =========================================
+   03 - HERO SECTION (Slider)
+   ========================================= */
 .hero-image-section {
     position: relative;
-    height: 70vh; /* Reducido para que no ocupe toda la pantalla */
-    min-height: 500px;
+    height: 80vh; /* Altura perfecta para que deje ver las cifras abajo */
+    min-height: 550px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -9,93 +12,87 @@
     background-color: #111;
 }
 
+/* Slider y superposiciones */
+.hero-slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+.slide-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center;
+    opacity: 0; transition: opacity 1.5s ease-in-out;
+}
+.slide-bg.active { opacity: 1; }
 
-/* Sombra oscura a la izquierda para que el texto blanco resalte */
 .hero-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(90deg, rgba(15,15,15,0.85) 0%, rgba(15,15,15,0.2) 60%, transparent 100%);
+    /* Degradado oscuro más fuerte a la izquierda para que el texto se lea perfecto */
+    background: linear-gradient(90deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.4) 50%, transparent 100%);
     z-index: 1;
 }
 
+/* CONTENEDOR DE TEXTO - DENTRO DEL CONTAINER PRINCIPAL */
 .hero-content-box {
     position: relative;
     z-index: 2;
+    display: flex; 
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
     width: 100%;
-    max-width: 800px;
+    max-width: 750px; 
 }
 
 .hero-content-box h1 {
-    font-size: 5.5rem; /* Tipografía gigante */
+    font-size: 3.8rem; 
     color: var(--white); 
-    line-height: 1.05;
+    line-height: 1.1;
     margin-bottom: 20px;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
+    font-weight: 700;
 }
 
-/* Línea roja decorativa debajo del título */
 .hero-separator {
-    width: 60px;
-    height: 4px;
-    background-color: var(--mhc-red);
+    width: 60px; 
+    height: 4px; 
+    background-color: var(--mhc-red); 
     margin-bottom: 25px;
 }
 
 .hero-content-box p {
-    font-size: 1.25rem; 
+    font-size: 1.15rem; 
     color: #f0f0f0; 
     max-width: 500px; 
-    font-weight: 400;
+    font-weight: 400; 
+    margin-bottom: 35px;
 }
 
-/* Grupo de Botones */
-.hero-buttons { display: flex; gap: 15px; margin-top: 35px; }
-.hero-buttons .btn-primary { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; text-transform: uppercase; border-radius: 4px; }
-.hero-buttons .btn-outline {
-    background: transparent; color: var(--white); padding: 12px 28px; border-radius: 4px;
-    font-weight: 600; font-size: 0.85rem; text-transform: uppercase; border: 1px solid var(--white);
-    text-decoration: none; transition: var(--transition);
+.hero-buttons { 
+    display: flex; 
+    gap: 15px; 
 }
-.hero-buttons .btn-outline:hover { background: var(--white); color: var(--text-main); }
 
-/* Indicadores de Slider inferiores */
+/* Indicadores inferiores del Slider */
 .hero-indicators {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
+    position: absolute; 
+    bottom: 80px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex; 
+    gap: 8px; 
     z-index: 2;
 }
-.hero-indicators span { width: 30px; height: 3px; background: rgba(255,255,255,0.4); display: block; }
-.hero-indicators span.active { background: var(--mhc-red); }
 
+.hero-indicators span { 
+    width: 30px; 
+    height: 3px; 
+    background: rgba(255,255,255,0.4); 
+    display: block; 
+}
+
+.hero-indicators span.active { 
+    background: var(--mhc-red); 
+}
+
+/* Responsivo para celulares */
 @media (max-width: 768px) {
-    .hero-content-box h1 { font-size: 3.5rem; }
+    .hero-content-box h1 { font-size: 2.8rem; }
     .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; }
-}
-
-.hero-slider {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 0;
-}
-
-.slide-bg {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0; /* Ocultas por defecto */
-    transition: opacity 1.5s ease-in-out; /* Transición suave de 1.5 segundos */
-}
-
-/* La imagen activa es la que se hace visible */
-.slide-bg.active {
-    opacity: 1;
 }

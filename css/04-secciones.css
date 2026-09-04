@@ -2,54 +2,64 @@
    04 - SECCIONES: CIFRAS, MAPA Y PREMIOS
    ========================================= */
 
-/* --- SECCIÓN CIFRAS --- */
+/* --- SECCIÓN CIFRAS (EFECTO FLOTANTE SOBRE EL HERO) --- */
 .cifras-section {
-    background-color: var(--white);
-    padding: 60px 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
     position: relative;
     z-index: 10;
+    margin-top: -60px; /* EL TRUCO: Sube toda la sección 60px sobre el Hero */
+    padding: 0 15px; /* Margen para que no pegue a los bordes en celular */
 }
-.cifras-grid { display: flex; justify-content: space-between; align-items: center; }
-.cifra-item { flex: 1; text-align: center; border-right: 1px solid #e5e5e5; padding: 10px 0; }
+
+/* Aplicamos el fondo blanco y la sombra al contenedor interno, no a toda la sección */
+.cifras-section .container {
+    background-color: var(--white);
+    padding: 40px 20px;
+    border-radius: 6px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Sombra que genera la profundidad */
+}
+
+.cifras-grid { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.cifra-item { 
+    flex: 1; 
+    text-align: center; 
+    border-right: 1px solid #e5e5e5; 
+    padding: 10px 0; 
+}
+
 .cifra-item:last-child { border-right: none; }
-.cifra-icon { font-size: 2.2rem; color: var(--mhc-red); margin-bottom: 15px; }
-.cifra-valor { font-size: 3.2rem; color: var(--text-main); margin-bottom: 5px; font-weight: 700; letter-spacing: -1px; }
-.cifra-label { font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
 
-/* --- SECCIÓN MAPA (DISEÑO 3 COLUMNAS) --- */
-.mapa-section { 
-    padding: 100px 0; 
-    background-color: #f8f9fa; /* Fondo gris muy claro */
-    border-top: 1px solid #eaeaea;
+.cifra-icon { 
+    font-size: 2.2rem; 
+    color: var(--mhc-red); 
+    margin-bottom: 15px; 
 }
 
-.presencia-layout {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+.cifra-valor { 
+    font-size: 3.2rem; /* Tamaño grande como en tu imagen */
+    color: var(--text-main); 
+    margin-bottom: 5px; 
+    font-weight: 700; 
+    letter-spacing: -1px; 
 }
 
-/* Columna Izquierda: Texto */
-.presencia-texto {
-    flex: 1;
-    max-width: 320px;
+.cifra-label { 
+    font-size: 0.75rem; 
+    color: #666; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    font-weight: 600; 
 }
 
-.presencia-texto h2 {
-    font-size: 2.6rem;
-    color: var(--text-main);
-    margin-bottom: 20px;
-    line-height: 1.1;
-    letter-spacing: -1px;
-}
-
-.presencia-texto p {
-    color: var(--text-muted);
-    margin-bottom: 30px;
-    font-size: 1.05rem;
-    line-height: 1.6;
+@media (max-width: 900px) {
+    .cifras-grid { flex-wrap: wrap; }
+    .cifra-item { flex: 0 0 50%; border-bottom: 1px solid #e5e5e5; padding: 30px 0; }
+    .cifra-item:nth-child(even) { border-right: none; }
+    .cifra-item:nth-child(3), .cifra-item:nth-child(4) { border-bottom: none; }
 }
 
 /* Columna Centro: Mapa */
