@@ -1,21 +1,20 @@
 /* =========================================
-   04 - SECCIONES: CIFRAS, MAPA Y PREMIOS
+   04 - SECCIONES: CIFRAS, MAPA, PREMIOS Y CAPACIDADES
    ========================================= */
 
-/* --- SECCIÓN CIFRAS (EFECTO FLOTANTE SOBRE EL HERO) --- */
+/* --- 1. SECCIÓN CIFRAS (EFECTO FLOTANTE SOBRE EL HERO) --- */
 .cifras-section {
     position: relative;
     z-index: 10;
-    margin-top: -60px; /* EL TRUCO: Sube toda la sección 60px sobre el Hero */
-    padding: 0 15px; /* Margen para que no pegue a los bordes en celular */
+    margin-top: -60px; /* Sube toda la sección sobre el Hero */
+    padding: 0 15px;
 }
 
-/* Aplicamos el fondo blanco y la sombra al contenedor interno, no a toda la sección */
 .cifras-section .container {
     background-color: var(--white);
     padding: 40px 20px;
     border-radius: 6px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Sombra que genera la profundidad */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Sombra de profundidad */
 }
 
 .cifras-grid { 
@@ -40,7 +39,7 @@
 }
 
 .cifra-valor { 
-    font-size: 3.2rem; /* Tamaño grande como en tu imagen */
+    font-size: 3.2rem; 
     color: var(--text-main); 
     margin-bottom: 5px; 
     font-weight: 700; 
@@ -62,55 +61,74 @@
     .cifra-item:nth-child(3), .cifra-item:nth-child(4) { border-bottom: none; }
 }
 
-/* Columna Centro: Mapa */
-.presencia-mapa {
-    flex: 1.5;
-    position: relative;
-    padding: 0 20px;
+
+/* --- 2. SECCIÓN MAPA (DISEÑO 3 COLUMNAS CON GRID) --- */
+.mapa-section { 
+    padding: 100px 0; 
+    background-color: #f8f9fa;
+    border-top: 1px solid #eaeaea;
 }
+
+.presencia-layout {
+    display: grid;
+    /* Divide en 3 columnas asegurando el espacio del mapa */
+    grid-template-columns: 1fr 1.5fr 1fr; 
+    gap: 40px;
+    align-items: center;
+}
+
+/* Columna Izquierda: Texto */
+.presencia-texto { width: 100%; }
+
+.presencia-texto h2 {
+    font-size: 2.6rem;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.presencia-texto p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Columna Centro: Mapa */
+.presencia-mapa { width: 100%; position: relative; }
 
 #mapa-colombia { 
     width: 100%; 
-    height: 450px; 
-    background: transparent;
+    height: 480px; 
+    background: #e5e5e5;
     z-index: 1; 
     border-radius: 8px;
-    /* Efecto visual para hacer el mapa más corporativo y gris */
-    filter: grayscale(100%) contrast(1.1) opacity(0.8);
+    filter: grayscale(100%) contrast(1.1) opacity(0.8); /* Look corporativo */
     transition: filter 0.3s ease;
 }
 
-#mapa-colombia:hover {
-    filter: grayscale(50%) contrast(1.1) opacity(1);
-}
+#mapa-colombia:hover { filter: grayscale(50%) contrast(1.1) opacity(1); }
 
 /* Columna Derecha: Barras de Progreso */
 .presencia-estadisticas {
-    flex: 1;
-    max-width: 320px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.stat-row {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
+.stat-row { display: flex; flex-direction: column; gap: 8px; }
 
 .stat-info {
     display: flex;
     justify-content: space-between;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-main);
     font-weight: 700;
 }
 
-.stat-number {
-    color: var(--text-muted);
-    font-weight: 500;
-}
+.stat-number { color: var(--text-muted); font-weight: 500; }
 
 .stat-bar {
     width: 100%;
@@ -122,36 +140,34 @@
 
 .stat-fill {
     height: 100%;
-    background-color: var(--mhc-red); /* Barra roja institucional */
+    background-color: var(--mhc-red);
     border-radius: 2px;
     transition: width 1s ease-in-out;
 }
 
-/* Responsivo para Tablets y Móviles */
 @media (max-width: 1024px) {
-    .presencia-layout { flex-direction: column; text-align: center; }
-    .presencia-texto, .presencia-estadisticas { max-width: 100%; width: 100%; }
-    .presencia-texto { margin-bottom: 30px; }
-    .presencia-mapa { width: 100%; margin-bottom: 30px; }
+    .presencia-layout { grid-template-columns: 1fr; text-align: center; }
+    .presencia-mapa { order: 2; margin-bottom: 20px; }
+    .presencia-texto { order: 1; margin-bottom: 20px; }
+    .presencia-estadisticas { order: 3; }
 }
 
-/* --- SECCIÓN PREMIOS (TIMELINE HORIZONTAL OSCURO) --- */
+
+/* --- 3. SECCIÓN PREMIOS (TIMELINE HORIZONTAL OSCURO) --- */
 .premios-timeline-section {
-    background-color: #0d1117; /* Fondo oscuro premium */
+    background-color: #0d1117;
     padding: 80px 0;
     color: var(--white);
 }
 
-.timeline-layout {
-    display: flex;
-    gap: 50px;
-    align-items: center;
+.timeline-layout { 
+    display: flex; 
+    gap: 50px; 
+    align-items: center; 
 }
 
 /* Título a la izquierda */
-.timeline-header {
-    flex: 0 0 280px;
-}
+.timeline-header { flex: 0 0 280px; }
 
 .seccion-etiqueta-red {
     color: var(--mhc-red);
@@ -164,7 +180,6 @@
     position: relative;
 }
 
-/* Línea roja decorativa debajo de "Reconocimientos" */
 .seccion-etiqueta-red::after {
     content: '';
     display: block;
@@ -181,14 +196,13 @@
     letter-spacing: -1px;
 }
 
-/* Contenedor de los premios */
+/* Contenedor Línea de tiempo */
 .timeline-content {
     flex: 1;
     position: relative;
-    padding-bottom: 35px; /* Espacio para la línea inferior */
+    padding-bottom: 35px; 
 }
 
-/* La línea horizontal base de color gris oscuro */
 .timeline-line {
     position: absolute;
     bottom: 0;
@@ -212,11 +226,10 @@
     position: relative;
 }
 
-/* El punto rojo anclado a la línea base */
 .timeline-dot {
     position: absolute;
-    bottom: -41px; /* Baja el punto hasta la línea base */
-    left: 45px; /* Lo centra debajo de la foto */
+    bottom: -41px; 
+    left: 45px; 
     width: 14px;
     height: 14px;
     background-color: var(--mhc-red);
@@ -233,10 +246,7 @@
     border: 1px solid #333;
 }
 
-.timeline-text {
-    display: flex;
-    flex-direction: column;
-}
+.timeline-text { display: flex; flex-direction: column; }
 
 .timeline-year {
     color: var(--mhc-red);
@@ -260,7 +270,6 @@
     margin: 0;
 }
 
-/* Adaptación para pantallas pequeñas (cambia de horizontal a vertical) */
 @media (max-width: 1024px) {
     .timeline-layout { flex-direction: column; align-items: flex-start; }
     .timeline-header { flex: auto; margin-bottom: 30px; }
@@ -271,15 +280,35 @@
     .timeline-dot { left: -6px; bottom: auto; top: 15px; }
 }
 
-/* RESPONSIVO */
-@media (max-width: 992px) {
-    .premios-grid { grid-template-columns: repeat(2, 1fr); }
-    .cifras-grid { flex-wrap: wrap; }
-    .cifra-item { flex: 0 0 50%; border-bottom: 1px solid #e5e5e5; padding: 30px 0; }
-    .cifra-item:nth-child(even) { border-right: none; }
-    .cifra-item:nth-child(3), .cifra-item:nth-child(4) { border-bottom: none; }
+
+/* --- 4. SECCIÓN CAPACIDADES (ESTILOS BASE) --- */
+.capacidades-section {
+    padding: 100px 0;
+    background-color: var(--white);
 }
 
-@media (max-width: 768px) {
-    .premios-grid { grid-template-columns: 1fr; }
+.capacidad-box {
+    padding: 40px 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.capacidad-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.capacidad-box h4 {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .capacidades-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 500px) {
+    .capacidades-grid { grid-template-columns: 1fr !important; }
 }
