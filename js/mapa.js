@@ -1,30 +1,48 @@
-// Esperar a que el documento cargue
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // 1. Inicializar el mapa centrado en Colombia
-    var map = L.map('mapa-colombia').setView([4.5709, -74.2973], 6);
+// --- CONFIGURACIÓN DEL MAPA INTERACTIVO (LEAFLET.JS) ---
 
-    // 2. Cargar la capa visual del mapa
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Buscamos el contenedor del mapa en el HTML
+    const mapaContenedor = document.getElementById('mapa-colombia');
+
+    // Si no existe el contenedor en esta página, detenemos el script para evitar errores
+    if (!mapaContenedor) return;
+
+    // 2. Inicializar el mapa centrado en Colombia
+    // Coordenadas aproximadas del centro de Colombia y nivel de zoom inicial
+    const map = L.map('mapa-colombia').setView([4.5709, -74.2973], 5);
+
+    // 3. Cargar la capa visual del mapa (Usamos la oficial de OpenStreetMap, libre)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 19
+        maxZoom: 18,
+        minZoom: 4
     }).addTo(map);
 
-    // 3. Lista de proyectos/ciudades (Latitud, Longitud, Nombre)
-    var locaciones = [
-        { lat: 7.1193, lng: -73.1227, nombre: "Bucaramanga" },
-        { lat: 5.0263, lng: -74.0036, nombre: "Zipaquirá" },
-        { lat: 4.6097, lng: -74.0817, nombre: "Bogotá" },
-        { lat: 5.0681, lng: -75.5174, nombre: "Manizales" },
-        { lat: 10.9685, lng: -74.7813, nombre: "Barranquilla" },
-        { lat: 4.2886, lng: -74.8166, nombre: "Flandes" },
-        { lat: 3.4516, lng: -76.5320, nombre: "Cali" },
-        { lat: 5.2045, lng: -74.7397, nombre: "Honda" }
+    // 4. Definir ícono personalizado para MHC (Punto rojo)
+    const mhcIcon = L.icon({
+        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+
+    // 5. Array con ubicaciones de ejemplo de proyectos MHC
+    // (En producción, estos datos vendrían de tu base de datos)
+    const ubicacionesProyectos = [
+        { lat: 4.6097, lon: -74.0817, titulo: "Oficina Principal - Bogotá", desc: "Sede administrativa central." },
+        { lat: 10.3910, lon: -75.4794, titulo: "Viaducto El Gran Manglar", desc: "Obra galardonada en Cartagena." },
+        { lat: 7.1254, lon: -73.1198, titulo: "Variante Bucaramanga", desc: "Proyecto vial de alta complejidad." },
+        { lat: 6.2476, lon: -75.5658, titulo: "Proyecto Túnel del Toyo", desc: "Participación en obra subterránea." },
+        { lat: 3.4516, lon: -76.5320, titulo: "Mantenimiento Vial Cali", desc: "Obras de infraestructura urbana." },
+        { lat: 4.1420, lon: -73.6266, titulo: "Vía Villavicencio", desc: "Intervención en corredor clave." }
     ];
 
-    // 4. Recorrer la lista y añadir marcadores
-    locaciones.forEach(function(lugar) {
-        var marker = L.marker([lugar.lat, lugar.lng]).addTo(map);
-        marker.bindPopup(`<b>${lugar.nombre}</b><br>Proyecto ejecutado.`);
+    // 6. Recorrer el array y agregar los marcadores al mapa
+    ubicacionesProyectos.forEach(proyecto => {
+        L.marker([proyecto.lat, proyecto.lon], { icon: mhcIcon })
+            .addTo(map)
+            .bindPopup(`<b>${proyecto.titulo}</b><br>${proyecto.desc}`);
     });
 });

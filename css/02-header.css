@@ -1,6 +1,6 @@
 /* HEADER BASE */
 .header {
-    background-color: transparent;
+    /* Quitado background-color blanco por defecto */
     padding: 20px 0;
     position: fixed;
     width: 100%;
@@ -12,7 +12,7 @@
 
 .header .container {
     display: flex;
-    justify-content: space-between; /* Separa Logo, Menú y Botón */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -30,7 +30,6 @@
     border-bottom: 2px solid transparent;
     transition: var(--transition); 
 }
-/* Línea roja debajo del elemento activo o al pasar el mouse */
 .nav-links a:hover, .nav-links a.active { border-bottom-color: var(--mhc-red); }
 
 /* BOTÓN HEADER DERECHO (Transparente con borde) */
